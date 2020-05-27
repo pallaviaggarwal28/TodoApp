@@ -22,6 +22,7 @@ class ListTodosComponent extends Component {
 
   refreshTodos() {
     let userName = AuthenticationService.getLoggedInUserName();
+
     TodoDataService.retrieveAllTodos(userName).then(response => {
       this.setState({
         todos: response.data
